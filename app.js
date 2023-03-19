@@ -30,19 +30,19 @@ app.post('/person', (req, res) => {
         .catch(err => res.status(500).send(err))
 })
 
-// Get all persons
-app.get('/person', async (req, res) => {
-    Person.find({})
-        .then(r => res.status(200).send(r))
-        .catch(err => res.status(500).send(err));
-});
-
-// Get one person
+// Get one person if id is given , otherwise get all persons
 app.get('/person', async (req, res) => {
     const { id } = req.query;
-    Person.findById(id)
-        .then(r => res.status(200).send(r))
-        .catch(err => res.status(500).send(err));
+    if(id){
+        Person.findById(id)
+            .then(r => res.status(200).send(r))
+            .catch(err => res.status(500).send(err));
+    }else{
+        Person.find({})
+            .then(r => res.status(200).send(r))
+            .catch(err => res.status(500).send(err));
+    }
+
 });
 
 // Update a person
