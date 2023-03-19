@@ -3,7 +3,7 @@
 ## steps 
 
 1. Clone the repo
-2. Install dependencies server `npm install`
+2. Install dependencies `npm install`
 3. To run server `npm start`
 4. To run unit test `npm test` 
 
