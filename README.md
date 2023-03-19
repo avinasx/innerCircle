@@ -11,8 +11,13 @@
 ## API documentation
 https://documenter.getpostman.com/view/23120878/2s93JzMggN
 
-###Debug
+### Debug
+
 stop server before running test and stop test before running server, because both will run on same port.
 If you are getting port already in use error, then run `kill -9 $(lsof -ti:3001)`   (linux machines only)
+
+
+
+
 
 © avinashsudhanshu@gmail.com | 2023
